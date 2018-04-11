@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopClockWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="DesktopClock" Height="54.485" Width="134.367" AllowsTransparency="True" WindowStyle="None" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Right" ShowInTaskbar="False" Visibility="Visible">
+    <Label x:Name="TimeLabel" Content="Time" VerticalAlignment="Top" Height="54" FontSize="24" FontFamily="MS Reference Sans Serif" Foreground="Black" HorizontalAlignment="Right"/>
 </Window>
