@@ -34,7 +34,7 @@ namespace DesktopClockWPF
 			Left = bounds.Right - Width;
 			Top = bounds.Top;
 
-            this.Loaded += new RoutedEventHandler(OnLoad);
+			this.Loaded += new RoutedEventHandler(OnLoad);
 
 			timer.Interval = 1000;
 			timer.Tick += new EventHandler(OnTick);
@@ -63,7 +63,7 @@ namespace DesktopClockWPF
 			Owner = w;
 			w.Hide();
 
-            OnTick(this, null);
+			OnTick(this, null);
         }
 
         void OnLoad(object sender, RoutedEventArgs e)
@@ -89,15 +89,15 @@ namespace DesktopClockWPF
 			return new SolidColorBrush(colour);
 		}
 
-        [DllImport("user32.dll")]
-        static extern bool SetWindowPos(IntPtr hWind, IntPtr hWindInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
-        const UInt32 SWP_NOSIZE = 0x0001, SWP_NOMOVE = 0x0002, SWP_NOACTIVATE = 0x0010;
-        static readonly IntPtr HWIND_BOTTOM = new IntPtr(1);
+		[DllImport("user32.dll")]
+		static extern bool SetWindowPos(IntPtr hWind, IntPtr hWindInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+		const UInt32 SWP_NOSIZE = 0x0001, SWP_NOMOVE = 0x0002, SWP_NOACTIVATE = 0x0010;
+		static readonly IntPtr HWIND_BOTTOM = new IntPtr(1);
 
-        void SendToBack()
-        {
-            var hWind = new WindowInteropHelper(this).Handle;
-            SetWindowPos(hWind, HWIND_BOTTOM, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
-        }
+		void SendToBack()
+		{
+			var hWind = new WindowInteropHelper(this).Handle;
+			SetWindowPos(hWind, HWIND_BOTTOM, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE | SWP_NOACTIVATE);
+		}
 	}
 }
