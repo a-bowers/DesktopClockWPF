@@ -64,12 +64,12 @@ namespace DesktopClockWPF
 			w.Hide();
 
 			OnTick(this, null);
-        }
+		}
 
-        void OnLoad(object sender, RoutedEventArgs e)
-        {
-            SendToBack();
-        }
+		void OnLoad(object sender, RoutedEventArgs e)
+		{
+			SendToBack();
+		}
 
 		void OnTick(object sender, EventArgs e) {
 			TimeLabel.Content = DateTime.Now.ToShortTimeString();
